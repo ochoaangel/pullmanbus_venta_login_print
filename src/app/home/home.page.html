@@ -1,0 +1,54 @@
+
+<ion-header no-border>  
+
+  <div class="cabeceraGeneral">
+    <img src="../../assets/images/PulmanLogo.png" 
+      style="padding: 1vh; position: relative; z-index: 100; height: 100%; width: 100%; object-fit: scale-down; margin: 30%; ">
+  </div>
+</ion-header>
+
+
+
+<ion-content>
+  <div style="height: 100%; width: 100%;background-color: #fe5b00;padding: 0px 3vw  3vw  3vw">
+    <div style=" height: 100%; background-color: white ;margin: 0px 0px 0px 0px;">
+      <ion-grid style="height: 100%;">
+        <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%">
+          <ion-col size="12" style="text-align: center;">
+
+            
+            <ion-row>
+              <ion-col size="12">
+                <ion-icon name="ios-person" style="font-size: 15vh;color: orange;"></ion-icon>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <div style="margin-bottom: 5px; "><input placeholder="Usuario"   [(ngModel)]="usuario.user"/></div>
+                <div style="margin-bottom: 5px; "><input placeholder="Contraseña" type="password"  [(ngModel)]="usuario.pass"/></div>
+                <div style="display: inline; font-size: 3vw;">Registro</div>
+                <div style="display: inline;font-size: 3vw;padding-left: 20vw;">¿Olvidó su contraseña?</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" style="margin-top: 6vh; margin-bottom: 6vh;"><input type="button" class="ingresar"
+                  value="Ingresar" (click)="ingresar()" /></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" style=" font-size: 14px;">Call Center 600 600 00 18</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" style="color: lightgrey; font-size: 10px;">
+                <div>Conoce tus derechos</div>
+                <div>Términos y condiciones del pasaje</div>
+                <div>Politica de privacidad</div>
+              </ion-col>
+            </ion-row>
+
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
