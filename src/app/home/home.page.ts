@@ -52,8 +52,6 @@ export class HomePage implements OnInit {
 
 
   ingresar() {
-    // console.log(this.usuario)
-    // console.log(this.usuarioPermitido)
     if (this.usuario.user != this.usuarioPermitido.user || this.usuario.pass != this.usuarioPermitido.pass) {
       this.toast_mostrar('Datos inválidos, intente nuevamente.', 3000, "primary", "middle");
     } else {

@@ -7,6 +7,7 @@ import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 import { take } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { MyserviceService } from 'src/app/service/myservice.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-pagina2',
@@ -92,11 +93,15 @@ export class Pagina2Page implements OnInit {
     this.contenido = `<div style="display: table;">
     <div style="display: table-row;text-align:center"><img
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL4AAAARAQAAAABLRSsLAAAC3mlDQ1BEb3QgR2FpbiAyMCUAAHicY2BgnsAABEwCDAwFRSVF7kGOkRGRUQrsNxnYGJgYeBgsGNgSk4sLfIPdQhhwgm/XGBhB9GVd3GpwAtZkoMVA+gAQG6WkFicD6S9AnF5eUgAUZ4wBskWSssHsAhA7OyTIGchuAbqapyS1AqSXwTm/oLIoMz2jREEjWVPByMDAUsE5vyg1B0QW5BcllmTm58EshNoBArwu+SUK7omZeUAtqmS4HS8AhSOEhQgfhBgCJJcWlUFYYEUCDAoMBgwODAEMiQz1DAsYjjK8YRRndGEsZVzBeI9JjCmIaQLTBWZh5kjmhcxvWCxZOlhuseqxtrLeY7Nkm8b2jT2cfTeHEkcXxxfORM4LXI5cW7g1uRfwSPFM5RXincQnzDeNX4Z/sYCOwA5BV8ErQqlCP4R7RVRE9oqGi34RmyRuJH5FokJSTvKYVL60tPQJmTJZddlbcn3yLvJ/FLYqFirpKb1VXqtSoGqi+lPtoHqXRqimkuYHrQPak3RSda30BPVe6R8xWGBYaxRjbGsib8ps+tLsgvlOiyWWE6zqrHNt4mwD7VztrR2MHXWc1JyVXBRc5d0U3JU91D11vUy8bXzcfYP9EvzzA+oDJwYtDd4VcjH0ZThThFykVVREdEXMzNg9cQ8S2BJ1k8KSG1LWpN5M58iwyMzMmpt9MZc9zz6/omBT4bti7ZKs0lVlbyr0K0uqdtUw1nrVTa1/2KjXVNN8tlWurbD9aKd0V1H36V7Vvsb+uxNtJs2e/Hdq/LTDMzRm9s/6Pidh7un55guWLhJZ3Lrk27LM5fdWhqw6vcZl7b71lhu2bTLZvGWrybbtO6x27t/tuufsvrD9Dw7mHPp5pP2Y+PEVJ61PnTuTfPbX+UkXtS8dvZJ49d/1OTdtbt29U39P+f6Jh3mPxZ7sf5b5QuTlwdf5b+XfXfjQ9Mn086uvC76H/xT4depP6z/H//8BrvkJNtP5UDIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAE5SURBVHicbVA9S8NQFD1JLk3A0tatg2h+QnByzOifEIKTmx0t+JG3KTh27NCf4Ojma3Xo2F9QIwiWUuVZo6bNS58vsRUK3uG8y+Gec989pAxLItuYL7Asw040ZqSgKWnLFa8wL17K2/+KCoukMlsRK0uCqZh/A0V02rRf3eOzyke3M7xPSVLK0OiLJD0/WAjBm5ufPLjtgZKSNJi/F8UwIhVp150Rw8mVtorN9a296hxiFyRgmuANjrfs0eD8TqAaM7+cf7c+Xs4Gh3+yASjy9lsp871BnD6ZDGG30bb0pgdCNWwtxzoFXrYBDz5xP9GB8KAz+r62wC66XnlCjj2j/O7Sb0q1cYF1aWktheodlRlDMJg8l3V+IdyRc7T1lStq64fwmoIryIAT9KeSwRvGTpwqWOS9THvbP1+Jg6eGxblOAAAAAElFTkSuQmCC"></div>
-  <div style="display: table-row;text-align:center"><strong>www.pullmanbus.cl</strong></div>
-  <div style="display: table-row;text-align:center"><small>Fecha: ${ myItem.fecha}</small></div>
-  <div style="display: table-row;text-align:center"><strong>Total: ${myItem.totalMostrar}</strong></div>
-    </div>`;
- 
+  <div style="display: table-row;text-align:center">www.pullmanbus.cl</div>
+  <br><div style="display: table-row;text-align:center"><small>Caratula: <strong>123345</strong></small></div>
+  <br><div style="display: table-row;text-align:center"><small>RUT: <strong>13.969.123-5</strong></small></div>
+  <br><div style="display: table-row;text-align:center"><small>Pos: <strong>4</strong></small></div>
+  <br><div style="display: table-row;text-align:center"><small>Fecha:<strong> ${ moment(myItem.fecha2).format('DD/MM/YYYY')}</strong></small></div>
+  <br><div style="display: table-row;text-align:center"><small>Hora: <strong>${ moment(myItem.fecha2).format('HH:mm')}</strong></small></div>
+  <br><div style="display: table-row;text-align:center">Valor: <strong>${myItem.totalMostrar}</strong></div>
+  <br><br><br><br><br></div>`;
+
     this.printer.print(this.contenido, this.myoptions)
       .then(succes => {
 
@@ -126,7 +131,7 @@ export class Pagina2Page implements OnInit {
     </div>`;
 
     let myTotal = 0;
-    this.mys.acumulado.forEach(element => { 
+    this.mys.acumulado.forEach(element => {
       console.log('element', element);
       myTotal = myTotal + element.total;
       this.contenido = this.contenido + `  <div style="display: table-row;">
@@ -137,9 +142,9 @@ export class Pagina2Page implements OnInit {
     });
 
     this.contenido = this.contenido + `</div>`;
-    this.contenido = this.contenido + `<strong>Cantidad: ${this.mys.acumulado.length}</strong>`;
-    this.contenido = this.contenido + `<strong>Caratula: 123345</strong>`;
-    this.contenido = this.contenido + `<br><strong>Total General: $${myTotal}.000</strong>`;
+    this.contenido = this.contenido + `<strong>Cantidad: ${this.mys.acumulado.length}</strong><br>`;
+    this.contenido = this.contenido + `<strong>Caratula: 123345</strong><br>`;
+    this.contenido = this.contenido + `<strong>Total General: $${myTotal}.000</strong><br><br><br><br>`;
 
     this.printer.print(this.contenido, this.myoptions)
       .then(succes => {
@@ -156,19 +161,9 @@ export class Pagina2Page implements OnInit {
 
   btnGral(myvalue: number) {
 
-    let myItem = { total: myvalue, totalMostrar: `$ ${myvalue}.000`, fecha: new Date().toLocaleString() }
+    let myItem = { total: myvalue, totalMostrar: `$ ${myvalue}.000`, fecha: new Date().toLocaleString(), fecha2: new Date() }
     this.mys.acumulado.push(myItem);
     this.Imprimir2(myItem);
-
-    // console.log('valores dsd BTN antes this.mys.valoresA ', this.mys.valores);
-    // this.mys.valores.total = value;
-    // this.mys.valores.totalMostrar = `$ ${this.mys.valores.total}.000`;
-    // // this.mys.valores.fecha = new Date().toLocaleString();
-    // console.log('valores dsd BTN antes this.mys.valoresB ', this.mys.valores);
-    // console.log('valores dsd BTN antes this.mys.acumulado ', this.mys.acumulado);
-    // this.mys.acumulado = [...this.mys.acumulado, this.mys.valores];
-    // console.log('valores dsd BTN despues this.mys.acumulado', this.mys.acumulado);
-    // this.Imprimir2();
   }
 
 

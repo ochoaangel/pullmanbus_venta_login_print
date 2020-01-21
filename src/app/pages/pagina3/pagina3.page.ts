@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 import { MyserviceService } from 'src/app/service/myservice.service';
 
 
-
 @Component({
   selector: 'app-pagina3',
   templateUrl: './pagina3.page.html',
@@ -28,32 +27,10 @@ export class Pagina3Page implements OnInit {
     private toastCtrl: ToastController,
     private router: Router,
     private mys: MyserviceService
-     ) { }
+  ) { }
 
 
 
-  ngOnInit() {
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ngOnInit() { }
 
 }

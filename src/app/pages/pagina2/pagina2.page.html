@@ -1,8 +1,8 @@
 <ion-header no-border>
 
   <div class="cabeceraGeneral">
-    <img src="../../assets/images/PulmanLogo.png" routerLink="/pagina3"
-      style="padding: 1vh; position: relative; z-index: 100; height: 100%; width: 100%; object-fit: scale-down; margin: 30%; ">
+    <img src="../../assets/images/PulmanLogo.png" 
+      style="padding: 1vh; position: relative; z-index: 100; height: 100%; object-fit:scale-down;padding-top: 8vh; margin: 30%; ">
   </div>
 
 </ion-header>
@@ -10,9 +10,19 @@
 
 
 <ion-content>
+ 
   <div style="height: 100%; width: 100%;background-color: #fe5b00;padding: 0px 3vw  3vw  3vw">
     <div style=" height: 100%; background-color: white ;margin: 0px 0px 0px 0px;">
-      <ion-grid style="height: 100%;">
+
+      <div style="width: 100%; text-align: right;padding: 2vh;">
+        <ion-text color="primary" style="font-size: 1.2rem;">
+          Caratula: 123345
+        </ion-text>
+      </div>
+
+
+
+      <ion-grid style="height: 100% ;margin-top: -10vh;">
         <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%">
           <ion-col size="12" style="text-align: center;">
 
@@ -21,30 +31,22 @@
               <ion-row style="position: relative;" (click)="volver()">
                 <ion-col size="12" style="padding-top: 2vh;">
                   <div
-                    style="background-color: #ff45008f; color:white; border-radius: 1vw; width: 30vw; height: 8vw; display: flex; justify-content: center; align-items: center; font-size: 4vw;">
+                    style="background-color: #ff45008f; color:white; border-radius: 1vw; width: 30vw; height: 7vh; display: flex; justify-content: center; align-items: center; font-size: 1rem;">
                     Cerrar sesión</div>
                 </ion-col>
               </ion-row>
-
-              <ion-row style="position: relative;" (click)="volver()">
-                <ion-col size="12" style="padding-top: 2vh;">
-                  <ion-text color="primary" style="font-size: 4vh;">
-                    Caratula: 123345
-                  </ion-text>
-                </ion-col>
-              </ion-row>
-
+ 
 
               <ion-row class="ion-no-margin ion-no-padding">
                 <ion-col size=6 class="ion-no-margin ion-no-padding">
                   <ion-button (click)="btn1()" size="full"
-                    style="height: 14vh; font-size: 9vw; --background:lightgreen">
+                    style="--background:lightgreen">
                     $1.000
                   </ion-button>
                 </ion-col>
                 <ion-col size=6 class="ion-no-margin ion-no-padding">
                   <ion-button (click)="btn2()" size="full"
-                    style="height: 14vh; font-size: 9vw; --background: lightsteelblue">
+                    style="--background: lightsteelblue">
                     $2.000
                   </ion-button>
                 </ion-col>
@@ -53,13 +55,13 @@
               <ion-row class="ion-no-margin ion-no-padding">
                 <ion-col size=6 class="ion-no-margin ion-no-padding">
                   <ion-button (click)="btn5()" size="full"
-                    style="height: 14vh; font-size: 9vw; --background:lightcoral;">
+                    style="--background:lightcoral;">
                     $5.000
                   </ion-button>
                 </ion-col>
                 <ion-col size=6 class="ion-no-margin ion-no-padding">
                   <ion-button (click)="btn10()" size="full"
-                    style="height: 14vh; font-size: 9vw; --background:lightslategrey">
+                    style="--background:lightslategrey">
                     $10.000
                   </ion-button>
                 </ion-col>
@@ -70,12 +72,12 @@
 
 
 
-              <ion-button size="full" style="margin-top: 4vh; height: 7vh;" (click)="ImprimirAcumulado()">
+              <ion-button size="full" style="margin-top: 4vh; height: 7vh;font-size: 4vh;" (click)="ImprimirAcumulado()">
                 Cerrar servicio
               </ion-button>
             </div>
 
- 
+
           </ion-col>
         </ion-row>
       </ion-grid>

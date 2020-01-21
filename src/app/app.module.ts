@@ -13,10 +13,14 @@ import { Printer } from '@ionic-native/printer/ngx';
 
 import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+    // BrowserAnimationsModule
+  ], 
   providers: [
     StatusBar,
     SplashScreen,
